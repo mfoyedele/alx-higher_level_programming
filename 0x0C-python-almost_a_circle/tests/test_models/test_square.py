@@ -391,7 +391,7 @@ class TestSquareMethods(unittest.TestCase):
         res = "[{}]".format(dictionary.__str__())
         res = res.replace("'", "\"")
 
-        wih open("Square.json", "r") as file:
+        with open("Square.json", "r") as file:
             res2 = file.read()
 
         self.assertEqual(res, res2)
@@ -407,7 +407,7 @@ class TestSquareMethods(unittest.TestCase):
         s1 = Square.create(**dictionary)
         self.assertEqual(s1.id, 89)
 
-     def test_create_2(self):
+    def test_create_2(self):
         """ Test create method """
         dictionary = {'id': 89, 'size': 1}
         s1 = Rectangle.create(**dictionary)
